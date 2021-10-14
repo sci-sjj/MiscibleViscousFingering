@@ -1,4 +1,4 @@
-# MiscibleViscousFingering
+# Miscible Viscous Fingering
 
 Simulation files and image analysis files for Miscible Viscous Fingering in a Quarter five-spot cell.
 
