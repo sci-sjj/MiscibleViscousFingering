@@ -8,7 +8,7 @@ colours =   [ 0,0,0; 0    0.4470    0.7410;0.8500    0.3250    0.0980;0.9290 ...
     0.1880; 0.3010    0.7450    0.9330; 0.6350    0.0780    0.1840; 0.5 0.5 0.5];
 
 
-addpath('Experimental_results')
+addpath('Experimental_results/txt_results')
 addpath('Experimental_results/Literature_results/Recovery_mobility_ratio')
 
 exp_data = importdata('Exp_results_all_BT_REC_M_PE.txt');
@@ -39,8 +39,8 @@ plot(ld7(:,1),ld7(:,2)/100, 'k^','linewidth', 1,'markersize', msize)
 plot(ld3(:,1),ld3(:,2)/100, 'k*','linewidth', 1,'markersize', msize)
 
 
-plot(exp_data.data(1:8,1),exp_data.data(1:8,4), 'o','color',colours (2,:), 'markersize', msize2, 'markerfacecolor',colours (2,:))
-errorbar(exp_data.data(1:8,1),exp_data.data(1:8,5),exp_data.data(1:8,8), 's','color',colours (3,:), 'markersize', msize2, 'markerfacecolor',colours (3,:))
+errorbar(exp_data.data(1:8,1),exp_data.data(1:8,4),exp_data.data(1:8,1)*0.1,'horizontal', 'o','color',colours (2,:), 'markersize', msize2, 'markerfacecolor',colours (2,:))
+errorbar(exp_data.data(1:8,1),exp_data.data(1:8,5), exp_data.data(1:8,8),exp_data.data(1:8,8), exp_data.data(1:8,1)*0.1, exp_data.data(1:8,1)*0.1, 's','color',colours (3,:), 'markersize', msize2, 'markerfacecolor',colours (3,:))
 
 
 xlim([0 25])

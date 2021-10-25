@@ -1,9 +1,9 @@
 clc
 close all
 clearvars
-
+restoredefaultpath
 addpath('Simulation_results')
-addpath('Experimental_results')
+addpath('Experimental_results/txt_results')
 
 colours =   [ 0,0,0; 0    0.4470    0.7410;0.8500    0.3250    0.0980;0.9290 ...
     0.6940    0.1250;0.4940    0.1840    0.5560; 0.4660    0.6740...
@@ -36,8 +36,8 @@ msize2_small = 4;
 figure
 hold on
 
-plot(exp_data.data(m_ind,1),exp_data.data(m_ind,4), 'o','color',colours (2,:), 'markersize', msize2, 'linewidth', 1.5)
-errorbar(exp_data.data(m_ind,1),exp_data.data(m_ind,5),exp_data.data(m_ind,8), 's','color',colours (3,:), 'markersize', msize2, 'linewidth', 1.5)
+errorbar(exp_data.data(m_ind,1),exp_data.data(m_ind,4),exp_data.data(m_ind,1)*0.1, 'horizontal', 'o','color',colours (2,:), 'markersize', msize2, 'linewidth', 1.5)
+errorbar(exp_data.data(m_ind,1),exp_data.data(m_ind,5),exp_data.data(m_ind,8),exp_data.data(m_ind,8), exp_data.data(m_ind,1)*0.1, exp_data.data(m_ind,1)*0.1, 's','color',colours (3,:), 'markersize', msize2, 'linewidth', 1.5)
 
 %errorbar(exp_data.data(m_ind,1),exp_data.data(m_ind,7),exp_data.data(m_ind,8), 's','color',colours (2,:), 'markersize', msize2)
 
@@ -70,7 +70,7 @@ set(gca,'Fontsize',20)
 figure
 hold on
 
-errorbar(exp_data.data(m_ind,1),exp_data.data(m_ind,7),exp_data.data(m_ind,8), 's','color',colours (3,:), 'markersize', msize2, 'linewidth', 1.5)
+errorbar(exp_data.data(m_ind,1),exp_data.data(m_ind,7),exp_data.data(m_ind,8),exp_data.data(m_ind,8),exp_data.data(m_ind,1)*0.1, exp_data.data(m_ind,1)*0.1,  's','color',colours (3,:), 'markersize', msize2, 'linewidth', 1.5)
 
 
 plot(av_rec_M(:,1), av_rec_M(:,2), 'k-','linewidth', 2)
